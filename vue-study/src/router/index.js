@@ -30,8 +30,15 @@ const routes = [
     path:"/dataBinding",
     name:"DataBinding",
     component:()=> import('../views/DataBinding.vue')
+  },
+  {
+    path:"/example",
+    name:"Example",
+    component:()=> import('../views/Example.vue')
   }
+
 ]
+
 
 const router = createRouter({
   history: createWebHashHistory(),
