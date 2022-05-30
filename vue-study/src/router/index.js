@@ -50,8 +50,32 @@ const routes = [
     path:'/mixin',
     name:'Mixin',
     component:() => import('../views/MixinTest.vue')
+  },
+  {
+    path:'/calculator',
+    name:'Calculator',
+    component:() => import('../views/Calculator.vue')
+  },
+  {
+    path:'/compositionapi',
+    name:'CompositionAPI',
+    component:() => import('../views/CompositionAPI.vue')
+  },
+  {
+    path:'/compositionapi2',
+    name:'CompositionAPI2',
+    component:() => import('../views/CompositionAPI2.vue')
+  },
+  {
+    path:'/compositionapi3',
+    name:'CompositionAPI3',
+    component:() => import('../views/CompositionAPI3.vue')
+  },
+  {
+    path:'/compositionapi4',
+    name:'CompositionAPI4',
+    component:() => import('../views/CompositionAPI4.vue')
   }
-
 ]
 
 
