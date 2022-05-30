@@ -45,6 +45,11 @@ const routes = [
     path:'/slot',
     name:'Slot',
     component:() => import('../views/SlotHome.vue')
+  },
+  {
+    path:'/mixin',
+    name:'Mixin',
+    component:() => import('../views/MixinTest.vue')
   }
 
 ]
