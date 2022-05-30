@@ -40,6 +40,11 @@ const routes = [
     path:'/serverdata',
     name:'serverData',
     component:() => import('../views/ServerData.vue')
+  },
+  {
+    path:'/slot',
+    name:'Slot',
+    component:() => import('../views/SlotHome.vue')
   }
 
 ]
