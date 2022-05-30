@@ -1,23 +1,24 @@
 <template>
 <div>
-    <input type="text" v-model="userInfo.name">
-    <input type="text" v-model.number="userInfo.age">
-    <input type="text" v-model="userInfo.job">
-    <button @click="saveUserInfo">Save</button>
+    <button @click="checkNowData">MOM AND FAM BTN</button>
+    <ChildComponent ref="childForm" />
 </div>
 </template>
 
 <script>
+//components
+import ChildComponent from './ChildComponent.vue'
+
 export default {
     name:'sample-name',
-    components:{},
+    components:{ChildComponent},
+    computed:{
+        msg(){
+            return this.$refs.childForm.msg;
+        },
+    },
     data(){
         return {
-            userInfo:{
-                name:'',
-                age:'',
-                job:'',
-            }
         };
     },
     setup(){},
@@ -25,30 +26,11 @@ export default {
     mounted(){},
     unmounted(){},
     methods:{
-        saveUserInfo: function(){
-            if(this.userInfo.name == ''){
-                // return alert('사용자 이름을 입력하세요.');
-                return this.$swal('사용자 이름을 입력하세요.')
-            }
-            if(this.userInfo.age == 0){
-                return alert('사용자 나이를 입력하세요.');
-            }
-            if(this.userInfo.job == ''){
-                return alert('사용자 직업을 입력하세요.');
-            }
-            const r = this.saveData(this.userInfo);
-            if(r == 'S'){
-                alert('사용자 정보가 생성되었습니다.');
-            }
-        },
-        saveData: function(params){
-            console.log(params);
-            const r = 'S';
-            return r;
-        },
-
+        checkNowData: function(){
+            console.log(this.msg);
+            console.log(this.$refs.childForm.msg)
+        }
     }
-
 }
 </script>
 
