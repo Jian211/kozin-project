@@ -9,5 +9,10 @@ const app = createApp(App)
 
 app.use(router)
 app.use(VueSweetAlert2)
+app.directive('focus',{
+    mounted(el){
+        el.focus()
+    }
+})
 
 app.mount('#app')

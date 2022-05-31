@@ -75,6 +75,16 @@ const routes = [
     path:'/compositionapi4',
     name:'CompositionAPI4',
     component:() => import('../views/CompositionAPI4.vue')
+  },
+  {
+    path:'/provideandinject',
+    name:'ProvideAndInject',
+    component:() => import('../views/ProvideView.vue')
+  },
+  {
+    path:'/custom',
+    name:'Custom',
+    component:() => import('../views/CustomDirective.vue')
   }
 ]
 
