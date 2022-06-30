@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mini.dev.product.dao.ProductDao">
+
+	<select id="getProduct" resultType="com.mini.dev.product.domain.Product">
+	 	select * from dev.t_product where id = #{id}
+	</select> 
+
+	<select id="getProductViewList" resultType="com.mini.dev.product.domain.ProductViewAticle">
+		select p.id, 
+			   p.product_name,
+			   p.product_price,
+		       p.delivery_price,
+		       p.add_delivery_price,
+		       p.tags,
+		       p.outbound_days,
+		       p.created_date,
+		       p.seller_id,
+		       c.category1,
+		       c.category2,
+		       c.category3,
+		       p.active_yn,
+		       img.path
+		from dev.t_product p
+			   join dev.t_imgae i on p.id = i.product_id 
+		       join dev.t_category c on p.category_id = c.id
+		       join dev.t_imgae img on p.id = img.product_id;
+	</select>
+</mapper>

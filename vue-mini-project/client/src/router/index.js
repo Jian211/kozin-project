@@ -10,15 +10,16 @@ const routes = [
     component: ProductList
   },
   {
-    path: '/detail',
+    path: '/detail/:id?',
     name: 'ProductDetail',
-    component: ProductDetail
+    component: ProductDetail,
   },
   {
     path: '/create',
     name: 'ProductCreate',
     component: ProductCreate
-  }
+  },
+  
 ]
 
 const router = createRouter({
