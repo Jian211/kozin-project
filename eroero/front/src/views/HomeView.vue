@@ -1,22 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <div>
-      <h1>테스트입니다 나올까요</h1>
-
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>GO</h1>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from "axios";
 
 export default {
-  name: 'HomeView',
+  data(){
+    return{
+      days : {
+        nowYear: '',
+        nowMonth: '',
+        nowDate: '',
+        nowDay: '',
+        day :["月","火","水","木","金","土","日"]
+      },
+    }
+  },
+  mounted(){
+      this.test();
+  },
+  methods:{
+    async test(){
+      await axios.get("/hello");
+    }
+  },
   components: {
-    HelloWorld
   }
 }
 </script>
